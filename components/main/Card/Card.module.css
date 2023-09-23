@@ -1,0 +1,30 @@
+.cardContainer{
+    width: 200px;
+    height: 250px;
+    border-radius: 15px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+}
+.cardDate{
+    font-size: 13px;
+    color: rgb(98, 98, 98);
+}
+.cardText{
+    font-size: 14px;
+    color: rgb(105, 105, 105);
+}
+.cardText:hover{
+    color: rgb(18, 18, 18);
+
+}
+.cardTitleContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

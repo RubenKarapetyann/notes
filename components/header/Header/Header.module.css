@@ -1,11 +1,13 @@
 .header {
     width: 100%;
     height: 100px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: rgba(163, 172, 181, 0.2) 0px 8px 24px;
     padding: 10px;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    position: sticky;
+    top: 0;
 }
 .headerSection{
     width: 30%;
