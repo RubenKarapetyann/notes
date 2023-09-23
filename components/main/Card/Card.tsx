@@ -2,6 +2,7 @@ import { FunctionComponent } from "react"
 import styles from "./Card.module.css"
 import Title from "@/components/global/Title/Title";
 import type { Note } from "@/types/data";
+import Link from "next/link";
 
 const Card: FunctionComponent<Note> = ({
     title,
@@ -14,19 +15,21 @@ const Card: FunctionComponent<Note> = ({
 
     const date = new Date(publicDate).getFullYear()
     return (
-        <div className={styles.cardContainer}>
-            <div className={styles.cardTitleContainer}>
-                <Title
-                    title={title}
-                    size={20}
-                />
-                <span className={styles.cardDate}>{date}</span>
-            </div>
+        <Link href={`/${id}`} className="link">
+            <div className={styles.cardContainer}>
+                <div className={styles.cardTitleContainer}>
+                    <Title
+                        title={title}
+                        size={20}
+                    />
+                    <span className={styles.cardDate}>{date}</span>
+                </div>
 
-            <p className={styles.cardText}>
-                {body}
-            </p>
-        </div>
+                <p className={styles.cardText}>
+                    {body}
+                </p>
+            </div>
+        </Link>
     )
 }
 
