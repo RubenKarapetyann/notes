@@ -1,21 +1,30 @@
 import { FunctionComponent } from "react"
 import styles from "./Card.module.css"
 import Title from "@/components/global/Title/Title";
+import type { Note } from "@/types/data";
 
+const Card: FunctionComponent<Note> = ({
+    title,
+    body,
+    publicDate,
+    id,
+    likes,
+    dislikes
+}:Note)=>{
 
-const Card: FunctionComponent = ()=>{
+    const date = new Date(publicDate).getFullYear()
     return (
         <div className={styles.cardContainer}>
             <div className={styles.cardTitleContainer}>
                 <Title
-                    title="Todo"
+                    title={title}
                     size={20}
                 />
-                <span className={styles.cardDate}>09.25.2018</span>
+                <span className={styles.cardDate}>{date}</span>
             </div>
 
             <p className={styles.cardText}>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora, neque? Modi dicta magnam sit iste vero nostrum nam architecto rerum dolores! Perferendis aliquid ipsam dolorem voluptate eveniet cumque voluptatibus et.
+                {body}
             </p>
         </div>
     )

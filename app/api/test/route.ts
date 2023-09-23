@@ -8,7 +8,6 @@ export async function GET() {
     "SELECT * FROM notes"
   )
 
-  console.log(data);
   
-  return NextResponse.json({ message : data })
+  return NextResponse.json(data)
 }
