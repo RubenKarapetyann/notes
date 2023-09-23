@@ -1,0 +1,8 @@
+.homeContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: fit-content;
+    margin: 0 auto;
+    justify-content: center;
+}
