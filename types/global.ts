@@ -12,3 +12,6 @@ export type NoteProps = {
 export type Children = {
     children : ReactNode
 }
+export type InputProps = {
+    initialValue : string,
+}

@@ -1,10 +1,11 @@
 "use client"
 import { ChangeEvent, FunctionComponent, useState } from "react"
 import styles from "./BodyInput.module.css"
+import { InputProps } from "@/types/global"
 
 
-const BodyInput:FunctionComponent = ()=>{
-    const [value, setValue] = useState<string>("")
+const BodyInput:FunctionComponent<InputProps> = ({ initialValue }:InputProps)=>{
+    const [value, setValue] = useState<string>(initialValue)
 
     const changeHandle = (e:ChangeEvent<HTMLTextAreaElement>) => setValue(e.target.value)
     

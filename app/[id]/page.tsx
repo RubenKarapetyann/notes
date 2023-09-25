@@ -8,13 +8,16 @@ import { Note } from "@/types/data";
 import FormWrapper from "@/components/form/FormWrapper/FormWrapper";
 
 const Note:FunctionComponent<NoteProps> = async ({ params : { id } }: NoteProps)=>{
-    const { title }:Note = await getNote(id)
+    const { title, body }:Note = await getNote(id)
     return (
         <div>
-            {title}
             <FormWrapper>
-                <TitleInput/>
-                <BodyInput/>
+                <TitleInput
+                    initialValue={title}
+                />
+                <BodyInput
+                    initialValue={body}
+                />
             </FormWrapper>
         </div>
     )
