@@ -5,14 +5,17 @@ import BodyInput from "@/components/main/BodyInput/BodyInput";
 import type { NoteProps } from "@/types/global";
 import getNote from "@/utils/api-utils/getNote";
 import { Note } from "@/types/data";
+import FormWrapper from "@/components/form/FormWrapper/FormWrapper";
 
 const Note:FunctionComponent<NoteProps> = async ({ params : { id } }: NoteProps)=>{
-    const note:Note = await getNote(id)
+    const { title }:Note = await getNote(id)
     return (
         <div>
-            {note.title}
-            <TitleInput/>
-            <BodyInput/>
+            {title}
+            <FormWrapper>
+                <TitleInput/>
+                <BodyInput/>
+            </FormWrapper>
         </div>
     )
 }
