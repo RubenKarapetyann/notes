@@ -1,4 +1,4 @@
-import { ReactNode } from "react"
+import { MouseEvent, ReactNode } from "react"
 
 export type titleProps = {
     title : string,
@@ -17,5 +17,5 @@ export type InputProps = {
 }
 export type ButtonProps = {
   icon : ReactNode,
-  handle : ()=>void
+  handle : (e:MouseEvent<HTMLButtonElement>)=>void
 }
