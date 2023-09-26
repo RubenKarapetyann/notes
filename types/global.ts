@@ -15,3 +15,7 @@ export type Children = {
 export type InputProps = {
     initialValue : string,
 }
+export type ButtonProps = {
+  icon : ReactNode,
+  handle : ()=>void
+}
