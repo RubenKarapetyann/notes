@@ -1,15 +1,15 @@
 "use client"
-import { Children } from "@/types/global"
+import { FormWrapperProps } from "@/types/global"
 import { FormEvent, FunctionComponent, ReactNode } from "react"
 
-const FormWrapper:FunctionComponent<Children> = ({ children }:Children)=>{
+const FormWrapper:FunctionComponent<FormWrapperProps> = ({ children, name }:FormWrapperProps)=>{
 
     const submitHandle = (e:FormEvent<HTMLFormElement>)=>{
-        e.preventDefault()
+        e.preventDefault()                
     }
 
     return (
-        <form onSubmit={submitHandle}>
+        <form onSubmit={submitHandle} id={name}>
             {children}
         </form>
     )

@@ -12,10 +12,14 @@ export type NoteProps = {
 export type Children = {
     children : ReactNode
 }
+export interface FormWrapperProps extends Children {
+    name : string
+}
 export type InputProps = {
     initialValue : string,
 }
 export type ButtonProps = {
-  icon : ReactNode,
-  handle : (e:MouseEvent<HTMLButtonElement>)=>void
+    icon : ReactNode,
+    handle? : (e:MouseEvent<HTMLButtonElement>)=>void,
+    form? : string | undefined
 }

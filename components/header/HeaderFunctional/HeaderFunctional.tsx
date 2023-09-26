@@ -6,6 +6,7 @@ import Search from "../Search/Search"
 import Button from "@/components/global/Button/Button"
 import { FaChevronLeft, FaSave } from "react-icons/fa"
 import { usePathname, useRouter } from "next/navigation"
+import { NOTE_FORM } from "@/constants/global/FORM"
 
 const HeaderFunctional: FunctionComponent =  () => {
     const router = useRouter()
@@ -20,8 +21,10 @@ const HeaderFunctional: FunctionComponent =  () => {
             {pathname === "/" ? 
                 <Search/>        
             :
-                <Button icon={<FaChevronLeft/>} handle={backHandle}/>
-                // {/* <Button icon={<FaSave/>}/> */}
+                <>
+                    <Button icon={<FaChevronLeft/>} handle={backHandle}/>
+                    <Button icon={<FaSave/>} form={NOTE_FORM}/> 
+                </>
             }
             <ThemeButton/> 
         </div>
