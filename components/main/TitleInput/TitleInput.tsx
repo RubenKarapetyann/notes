@@ -17,6 +17,7 @@ const TitleInput:FunctionComponent<InputProps> = ({ initialValue }:InputProps)=>
                 value={value}
                 onChange={changeHandle}
                 name="title"
+                id="title"
             />
         </div>
     )

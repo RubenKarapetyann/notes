@@ -15,6 +15,8 @@ const BodyInput:FunctionComponent<InputProps> = ({ initialValue }:InputProps)=>{
                 className={styles.bodyInput}
                 value={value}
                 onChange={changeHandle}
+                name="body"
+                id="body"
             />
         </div>
     )

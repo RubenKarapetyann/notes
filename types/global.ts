@@ -13,7 +13,8 @@ export type Children = {
     children : ReactNode
 }
 export interface FormWrapperProps extends Children {
-    name : string
+    name : string,
+    id? : string | number
 }
 export type InputProps = {
     initialValue : string,

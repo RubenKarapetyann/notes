@@ -7,17 +7,14 @@ import getNote from "@/utils/api-utils/getNote";
 import { Note } from "@/types/data";
 import FormWrapper from "@/components/form/FormWrapper/FormWrapper";
 import { NOTE_FORM } from "@/constants/global/FORM";
+import updateNote from "@/utils/api-utils/updateNote";
 
 const Note:FunctionComponent<NoteProps> = async ({ params : { id } }: NoteProps)=>{
     const { title, body }:Note = await getNote(id)
 
-    const submitHandle = ()=>{
-        
-    }
-
     return (
         <div>
-            <FormWrapper name={NOTE_FORM}>
+            <FormWrapper name={NOTE_FORM} id={id}>
                 <TitleInput
                     initialValue={title}
                 />
