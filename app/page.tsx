@@ -3,6 +3,8 @@ import styles from './page.module.css'
 import getNotes from '@/utils/api-utils/getNotes'
 import type { Note } from '@/types/data'
 
+export const dynamic = 'force-dynamic'
+
 export default async function Home() {
   const notes: Array<Note> = await getNotes()
 

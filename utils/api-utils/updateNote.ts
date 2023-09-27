@@ -7,15 +7,19 @@ const updateNote = async ( title:string, body:string, id:string | number )=>{
             ...updateConfig,
             body : JSON.stringify({
                 title, body, id
-            })
+            }),
+            next : {
+                // revalidate : 5
+            }
         })
         const result = await response.json()
         if(response.ok){
-            return result
+            return result            
         }
         return false
     }catch(err){
         console.log(err)
+        return false
     }
 }
 

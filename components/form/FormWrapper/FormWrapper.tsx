@@ -1,20 +1,25 @@
 "use client"
 import { FormWrapperProps } from "@/types/global"
 import updateNote from "@/utils/api-utils/updateNote"
+import { useRouter } from "next/navigation"
 import { FormEvent, FunctionComponent, ReactNode } from "react"
 
 const FormWrapper:FunctionComponent<FormWrapperProps> = ({ children, name, id }:FormWrapperProps)=>{
+    const router = useRouter()
 
-    const submitHandle = (e:FormEvent<HTMLFormElement>)=>{
+    const submitHandle = async (e:FormEvent<HTMLFormElement>)=>{
         e.preventDefault()
         const title:any = e.currentTarget.title
         const body:HTMLTextAreaElement = e.currentTarget.body
         if( id ){
-            updateNote(
+            const res = await updateNote(
                 title.value,
                 body.value,
                 id
             )
+            if(res && res.redirect){
+                router.push(res.redirect)
+            }
         }
     }
 

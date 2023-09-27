@@ -9,6 +9,8 @@ import FormWrapper from "@/components/form/FormWrapper/FormWrapper";
 import { NOTE_FORM } from "@/constants/global/FORM";
 import updateNote from "@/utils/api-utils/updateNote";
 
+export const dynamic = 'force-dynamic'
+
 const Note:FunctionComponent<NoteProps> = async ({ params : { id } }: NoteProps)=>{
     const { title, body }:Note = await getNote(id)
 
