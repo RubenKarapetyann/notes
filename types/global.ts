@@ -17,7 +17,7 @@ export interface FormWrapperProps extends Children {
     id? : string | number
 }
 export type InputProps = {
-    initialValue : string,
+    initialValue? : string,
 }
 export type ButtonProps = {
     icon : ReactNode,
