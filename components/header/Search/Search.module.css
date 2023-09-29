@@ -19,3 +19,19 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 3px 15px 0px;
     
 }
+
+@media (max-width:700px) {
+    .searchContainer{
+        width: 200px;
+    }
+    .searchInput{
+        width: 170px;
+        height: 35px;
+    }
+}
+
+@media (max-width:560px) {
+    .searchContainer{
+        justify-self: start;
+    }
+}

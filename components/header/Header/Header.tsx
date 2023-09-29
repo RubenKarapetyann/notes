@@ -7,7 +7,7 @@ import HeaderFunctional from "../HeaderFunctional/HeaderFunctional"
 const Header: FunctionComponent =  () => {
     return (    
         <div className={styles.header}>
-            <div className={styles.headerSection}>
+            <div className={`${styles.headerSection} ${styles.headerLogo}`}>
                 {/* <ManuButton/> */}
                 <Title
                     title="Notes"

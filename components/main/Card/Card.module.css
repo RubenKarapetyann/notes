@@ -19,6 +19,10 @@
     font-size: 14px;
     color: rgb(105, 105, 105);
     min-height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    word-break: break-all;
 }
 .cardText:hover{
     color: rgb(18, 18, 18);

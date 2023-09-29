@@ -13,7 +13,9 @@ const Card: FunctionComponent<Note> = ({
     dislikes
 }:Note)=>{
 
-    const date = new Date(publicDate).getFullYear()
+    const date = `${new Date(publicDate).toLocaleString()}`
+    const bodyText = body.length > 300 ? `${body.slice(0,297)}...` : body 
+
     return (
         <Link href={`/${id}`} className="link">
             <div className={styles.cardContainer}>
@@ -26,7 +28,7 @@ const Card: FunctionComponent<Note> = ({
                 </div>
 
                 <p className={styles.cardText}>
-                    {body}
+                    {bodyText}
                 </p>
             </div>
         </Link>

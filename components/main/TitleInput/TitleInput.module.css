@@ -18,3 +18,10 @@
 .titleInput:focus{
     outline: none;
 }
+
+@media (max-width:700px) {
+    .titleInput{
+        height: 50px;
+        border-radius: 17.8px;
+    }
+}

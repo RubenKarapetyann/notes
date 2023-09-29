@@ -22,3 +22,14 @@
     box-shadow: inset rgba(180, 185, 190, 0.2) 0px 6px 18px;
 
 }
+
+@media (max-width:700px) {
+    .themeButtonContainer{
+        width: 50px;
+    }
+    .themeButton{
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
