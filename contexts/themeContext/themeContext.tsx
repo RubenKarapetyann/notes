@@ -1,6 +1,6 @@
 "use client"
 import { Children } from "@/types/global";
-import { FunctionComponent, createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { ITheme } from "@/types/context";
 import { DARK, LIGHT } from "@/constants/CONTEXT";
 
