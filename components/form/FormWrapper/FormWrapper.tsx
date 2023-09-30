@@ -12,19 +12,21 @@ const FormWrapper:FunctionComponent<FormWrapperProps> = ({ children, name, id }:
         e.preventDefault()
         const title:any = e.currentTarget.title
         const body:HTMLTextAreaElement = e.currentTarget.body
-        if( id ){
-            const res = await updateNote(
-                title.value,
-                body.value,
-                id
-            )
-            if(res && res.redirect){
-                router.push(res.redirect)
-            }
-        }else{
-            const res = await createNote(title.value,body.value)
-            if(res && res.redirect){
-                router.push(res.redirect)
+        if( body.value !== "" ){
+            if( id ){
+                const res = await updateNote(
+                    title.value,
+                    body.value,
+                    id
+                )
+                if(res && res.redirect){
+                    router.push(res.redirect)
+                }
+            }else{
+                const res = await createNote(title.value,body.value)
+                if(res && res.redirect){
+                    router.push(res.redirect)
+                }
             }
         }
     }

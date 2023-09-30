@@ -11,6 +11,7 @@
     border: 0;
     resize: none;
     font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .bodyInput::-webkit-scrollbar {
     width: 0;
