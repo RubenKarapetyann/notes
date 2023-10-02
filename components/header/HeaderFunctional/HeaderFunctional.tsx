@@ -22,7 +22,7 @@ const HeaderFunctional: FunctionComponent =  () => {
 
     return (    
         <div className={styles.headerSection}>
-            {pathname === "/" ? 
+            {(pathname === "/" || pathname === "/search") ? 
                 <>
                     <Search/>
                     <Button icon={<FaPlus/>} handle={createHandle}/>

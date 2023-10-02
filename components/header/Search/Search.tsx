@@ -1,20 +1,27 @@
 "use client"
-import { FunctionComponent } from "react"
+import { FormEvent, FunctionComponent, useState } from "react"
 import styles from "./Search.module.css"
-import { useSearch } from "@/contexts/searchContext/searchContext"
 import { ChangeEvent } from "react"
+import { useRouter } from "next/navigation"
 
 const Search: FunctionComponent = ()=>{
-    const { value, changeValue } = useSearch()
+    const [ value, changeValue ] = useState<string>("")
+    const router = useRouter()
     const changeHandle = (e:ChangeEvent<HTMLInputElement>)=>changeValue(e.target.value)
+
+    const submitHandle = (e:FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        router.push(`/search/?query=${value}`)
+    }
+
     return (
-        <div className={styles.searchContainer}>
+        <form className={styles.searchContainer} onSubmit={submitHandle}>
             <input
                 className={styles.searchInput}
                 value={value}
                 onChange={changeHandle}
             />
-        </div>
+        </form>
     )
 }
 

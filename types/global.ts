@@ -1,4 +1,5 @@
 import { MouseEvent, ReactNode } from "react"
+import { Note } from "./data"
 
 export type titleProps = {
     title : string,
@@ -13,6 +14,9 @@ export type SearchParamsProps = {
     searchParams : {
         query : string
     }
+}
+export type NotesListProps = {
+    notes : Array<Note>
 }
 export type Children = {
     children : ReactNode
