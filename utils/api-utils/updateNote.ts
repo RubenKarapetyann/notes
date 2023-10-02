@@ -3,7 +3,7 @@ import { updateConfig } from "../api-configs/configs"
 
 const updateNote = async ( title:string, body:string, id:string | number )=>{
     try{
-        const response = await fetch(endpoints(id).note,{
+        const response = await fetch(endpoints(id,null).note,{
             ...updateConfig,
             body : JSON.stringify({
                 title, body, id

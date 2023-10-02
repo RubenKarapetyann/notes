@@ -9,6 +9,11 @@ export type NoteProps = {
         id : string
     }
 }
+export type SearchParamsProps = {
+    searchParams : {
+        query : string
+    }
+}
 export type Children = {
     children : ReactNode
 }

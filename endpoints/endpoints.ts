@@ -1,7 +1,7 @@
 
-const endpoints = (id:string | number | null) => {
+const endpoints = (id:string | number | null, query : string | null) => {
     return {
-        notes : `${process.env.SERVER}/api/test`,
+        notes : `${process.env.SERVER}/api/test/?q=${query}`,
         note : `${process.env.SERVER}/api/test/${id}`,
         create : `${process.env.SERVER}/api/create`
     }
