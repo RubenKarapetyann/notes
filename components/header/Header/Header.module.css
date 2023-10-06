@@ -10,12 +10,6 @@
     top: 0;
     background-color: white;
 }
-.header-light{
-    background-color: white;
-}
-.header-dark{
-    background-color: var(--mid-dark);
-}
 .headerSection{
     min-width: 25%;
     max-width: 40%;

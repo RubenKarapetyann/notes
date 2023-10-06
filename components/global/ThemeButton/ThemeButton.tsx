@@ -8,9 +8,17 @@ import { ITheme } from "@/types/context"
 const ThemeButton: FunctionComponent = ()=>{
     const { theme, changeTheme }:ITheme = useTheme()
     
+    const themeHandle = ()=>{
+        changeTheme()
+        if(document.querySelector("body")?.classList.contains("dark")){
+            document.querySelector("body")?.classList.remove("dark")
+        }else{
+            document.querySelector("body")?.classList.add("dark")
+        }
+    }
     return (
         <div className={styles.themeButtonContainer}>
-            <button className={styles.themeButton} onClick={changeTheme}>
+            <button className={`${styles.themeButton} ${styles[theme]}`} onClick={themeHandle}>
                 <FaMoon/>
             </button>
         </div>

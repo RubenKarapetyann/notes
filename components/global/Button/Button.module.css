@@ -14,6 +14,9 @@
     box-shadow: rgba(180, 185, 190, 0.2) 0px 6px 18px;
     cursor: pointer;
 }
+.dark { 
+    background-color: white;
+}
 .Button:active {
     box-sizing: border-box;
     box-shadow: inset rgba(180, 185, 190, 0.2) 0px 6px 18px;

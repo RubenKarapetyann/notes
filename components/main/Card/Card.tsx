@@ -3,6 +3,7 @@ import styles from "./Card.module.css"
 import Title from "@/components/global/Title/Title";
 import type { Note } from "@/types/data";
 import Link from "next/link";
+import CardBody from "@/components/global/CardBody/CardBody";
 
 const Card: FunctionComponent<Note> = ({
     title,
@@ -27,9 +28,7 @@ const Card: FunctionComponent<Note> = ({
                     <span className={styles.cardDate}>{date}</span>
                 </div>
 
-                <p className={styles.cardText}>
-                    {bodyText}
-                </p>
+                <CardBody text={bodyText}/>
             </div>
         </Link>
     )

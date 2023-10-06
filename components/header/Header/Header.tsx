@@ -6,7 +6,7 @@ import HeaderFunctional from "../HeaderFunctional/HeaderFunctional"
 
 const Header: FunctionComponent =  () => {
     return (    
-        <div className={styles.header}>
+        <header className={styles.header}>
             <div className={`${styles.headerSection} ${styles.headerLogo}`}>
                 {/* <ManuButton/> */}
                 <Title
@@ -14,7 +14,7 @@ const Header: FunctionComponent =  () => {
                 />
             </div>
             <HeaderFunctional/>
-        </div>
+        </header>
     )
 }
 
