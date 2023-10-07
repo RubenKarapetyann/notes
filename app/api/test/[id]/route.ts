@@ -5,14 +5,16 @@ import { Note } from '@/types/data';
 
 
 export async function GET(req: Request, { params : { id } } : NoteProps) {
-    
-    const [ data ] : any = await pool.query(
-        "SELECT * FROM notes WHERE id = ?",
-        [id]
-    )
-    
-    return NextResponse.json(data[0])
-
+    try{
+        const [ data ] : any = await pool.query(
+            "SELECT * FROM notes WHERE id = ?",
+            [id]
+        )
+        
+        return NextResponse.json(data[0])
+    }catch(err){
+        return NextResponse.json({ message : "false" })
+    }
 }
 
 export async function PATCH(req: Request) {
