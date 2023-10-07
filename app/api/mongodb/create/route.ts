@@ -2,14 +2,6 @@ import { NextResponse, NextRequest } from "next/server";
 import mongo from "@/utils/api-utils/mongo";
 import { nanoid } from "nanoid";
 
-const cleanUp = () =>{
-    mongo.close()
-    process.exit()
-}
-
-process.on("SIGINT",cleanUp)
-process.on("SIGTERM",cleanUp)
-
 
 export async function POST(req:NextRequest){
     try{

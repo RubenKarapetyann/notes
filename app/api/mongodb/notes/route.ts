@@ -1,14 +1,6 @@
 import { NextResponse } from 'next/server' 
 import mongo from '@/utils/api-utils/mongo';
 
-const cleanUp = () =>{
-    mongo.close()
-    process.exit()
-}
-
-process.on("SIGINT",cleanUp)
-process.on("SIGTERM",cleanUp)
-
 export async function GET(request: Request) { 
     try{
         const { searchParams } = new URL(request.url)

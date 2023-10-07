@@ -3,15 +3,6 @@ import mongo from '@/utils/api-utils/mongo';
 import type { NoteProps } from '@/types/global';
 import { Note } from '@/types/data';
 
-const cleanUp = () =>{
-    mongo.close()
-    process.exit()
-}
-
-process.on("SIGINT",cleanUp)
-process.on("SIGTERM",cleanUp)
-
-
 export async function GET(req: Request, { params : { id } } : NoteProps) {
     try{
         await mongo.connect()
