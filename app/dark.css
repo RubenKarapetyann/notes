@@ -4,6 +4,6 @@
 .dark { 
     background-color: var(--mid-dark);
 }
-.dark > header > div > div > p { 
+/* .dark > header > div > div > p { 
     color : white;
-}
+} */

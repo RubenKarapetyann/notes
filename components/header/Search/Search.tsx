@@ -11,6 +11,9 @@ const Search: FunctionComponent = ()=>{
 
     const submitHandle = (e:FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        if(!value){
+            return router.push("/")
+        }
         router.push(`/search/?query=${value}`)
     }
 

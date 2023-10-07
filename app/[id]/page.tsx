@@ -12,16 +12,20 @@ import updateNote from "@/utils/api-utils/updateNote";
 export const dynamic = 'force-dynamic'
 
 const Note:FunctionComponent<NoteProps> = async ({ params : { id } }: NoteProps)=>{
-    const { title, body }:Note = await getNote(id)
+    const note:Note = await getNote(id)
+
+    if(!note){
+        return <p>not found</p>
+    }
 
     return (
         <div>
             <FormWrapper name={NOTE_FORM} id={id}>
                 <TitleInput
-                    initialValue={title}
+                    initialValue={note.title}
                 />
                 <BodyInput
-                    initialValue={body}
+                    initialValue={note.body}
                 />
             </FormWrapper>
         </div>

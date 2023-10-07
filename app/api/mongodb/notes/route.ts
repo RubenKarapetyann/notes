@@ -16,15 +16,15 @@ export async function GET(request: Request) {
         await mongo.connect()
         const db = mongo.db("notes")
         const collection = db.collection("notes")
-      
-        if( query ){
-          const data = await collection.find({ title : query }).toArray()
         
+        
+        if( query ){
+          const data = await collection.find({ title : { $regex : query, $options : 'i' } }).toArray()
           return NextResponse.json(data)
         }
       
         const data = await collection.find({}).toArray()        
-      
+        
         return NextResponse.json(data)
     }catch(err){
         console.log(err);  
