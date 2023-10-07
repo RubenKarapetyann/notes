@@ -1,8 +1,8 @@
-import { NextResponse } from 'next/server' 
+import { NextResponse, NextRequest } from 'next/server' 
 import pool from '@/utils/api-utils/pool';
 
 
-export async function GET(request: Request) { 
+export async function GET(request: NextRequest) { 
   try{
     const { searchParams } = new URL(request.url)
     const query = searchParams.get('q')
@@ -22,6 +22,6 @@ export async function GET(request: Request) {
   
     return NextResponse.json(data)
   }catch(err){
-
+    return NextResponse.json({ message : "false" })
   }
 }

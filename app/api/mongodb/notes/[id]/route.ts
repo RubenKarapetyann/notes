@@ -38,5 +38,6 @@ export async function PATCH(req: Request) {
         
     }catch(err){
         console.log(err)
+        return NextResponse.json({message : "no", access : false, redirect : "/"})
     }    
 }

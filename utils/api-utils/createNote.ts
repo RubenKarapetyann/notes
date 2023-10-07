@@ -3,7 +3,7 @@ import { postConfig } from "../api-configs/configs"
 
 const createNote = async (title:string, body:string)=>{
     try{
-        const response = await fetch(endpoints(null).create,{
+        const response = await fetch(endpoints(null,null).create,{
             ...postConfig,
             body : JSON.stringify({
                 title,body
